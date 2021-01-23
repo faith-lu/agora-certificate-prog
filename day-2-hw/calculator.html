@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Calculator | Day 2 HW</title>
+        <link rel="stylesheet" href="calculator.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    </head>
+    <body id="container">
+        <div id="card">
+            <form action="./calculator.html" onsubmit="return calculate()">
+                <input type="number" id="val1" />
+                <input type="number" id="val2" />
+                <br />
+                <button id="add" type="button" onclick="calculate(this.id)">Add</button>
+                <button id="subtract" type="button" onclick="calculate(this.id)">Subtract</button>
+                <button id="multiple" type="button" onclick="calculate(this.id)">Multiply</button>
+                <button id="divide" type="button" onclick="calculate(this.id)">Divide</button>
+            </form>
+            <div id="result"></div>
+        </div>
+        <script>
+            function calculate(id) {
+                console.log(id);
+                let a = parseInt(document.getElementById("val1").value);
+                let b = parseInt(document.getElementById("val2").value);
+                var result;
+                if(id === "add") {
+                    result = add(a, b);
+                    document.getElementById('result').innerHTML = result;
+                    return;
+                }
+                else if(id === "subtract") {
+                    result = subtract(a, b);
+                    document.getElementById('result').innerHTML = result;
+                    return;
+                }
+                else if(id === "multiply") {
+                    result = multiply(a, b);
+                    document.getElementById('result').innerHTML = result;
+                    return;
+                }
+                else {
+                    result = divide(a, b);
+                    document.getElementById('result').innerHTML = result;
+                    return;
+                }
+            }
+
+            function add(a, b){
+                return a + b;
+            }
+            function subtract(a, b){
+                console.log("subtract");
+                return a - b;
+            }
+            function multiply(a, b){
+                console.log("multiply");
+                return a * b;
+            }
+            function divide(a, b){
+                console.log("divide");
+                return a / b;
+            }
+        </script>
+    </body>
+</html>
